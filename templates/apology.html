@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+<div style="margin-top: 100px; border-radius: 25px;" class="error">
+    <h4>{{msg}}</h4>
+    <img src="static/error.png" alt="Error" width="150px" height="150px" style="margin-top: 20px;">
+</div>
+{% endblock %}

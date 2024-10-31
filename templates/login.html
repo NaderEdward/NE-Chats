@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="center_box">
+        <h3 style="color: white; text-align: center;"> Login </h3>
+        <form action="/login" method="post">
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="login_phone_number" class="form-label">Phone Number</label>
+              <input name="login_phone_number" type="text" class="form-control" id="login_phone_number" placeholder="xxx-xxx-xxx-xx">
+            </div>
+
+            <div class="col-10" style="margin-left: 10%; margin-top: 0.5cm; margin-bottom: 0.25cm;">
+              <select class="form-select" aria-label="Country" name="login_country">
+                  <option selected disabled>Country</option>
+                  {% for country in countries %}
+                  <option value="{{country}}">{{country}}</option>
+                  {% endfor %}
+              </select>
+            </div>
+
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="login_password" class="form-label">Password</label>
+              <input name="login_password"type="password" class="form-control" id="login_password">
+            </div>
+
+            <button class="btn btn-light" id="login_button" type="submit" name="action" style="margin-left: 25%;">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

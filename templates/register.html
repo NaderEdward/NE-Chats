@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="center_box" style="margin-top: 10%;">
+        <h3 style="color: white; text-align: center;"> Register </h3>
+        <form action="/register" method="post">
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="register_name" class="form-label">Full Name</label>
+              <input name="register_name" type="text" class="form-control" id="register_name" placeholder="John Doe">
+            </div>
+
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="register_phone_number" class="form-label">Phone Number</label>
+              <input autocomplete="off" name="register_phone_number" type="text" class="form-control" id="register_phone_number" placeholder="xxx-xxx-xxx-x">
+            </div>
+
+            <div class="col-10" style="margin-left: 10%; margin-top: 0.5cm; margin-bottom: 0.25cm;">
+              <select class="form-select" aria-label="Country" name="register_country">
+                  <option selected disabled>Country</option>
+                  {% for country in countries %}
+                  <option value="{{country}}">{{country}}</option>
+                  {% endfor %}
+              </select>
+            </div>
+
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="register_password" class="form-label">Password</label>
+              <input name="register_password"type="password" class="form-control" id="register_password">
+            </div>
+
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="confirm_register_password" class="form-label">Confirm Password</label>
+              <input name="confirm_register_password" type="password" class="form-control" id="confirm_register_password">
+            </div>
+
+            <button class="btn btn-light" id="login_button" type="submit" name="action" style="margin-left: 25%;">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

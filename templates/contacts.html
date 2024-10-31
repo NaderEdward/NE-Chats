@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Contacts
+{% endblock %}
+
+{% block main %}
+
+<div class="container" style="flex-wrap: wrap;">
+    <div style="width: 100%;">
+        <table class="table table-secondary" style="border: 4px solid #3C3D37;">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for contact in contacts %}
+            <tr>
+              <th scope="row">{{loop.index}}</th>
+              <td>{{contact[1]}}</td>
+              <td>{{contact[3]}}</td>
+              <td>{{contact[4]}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="center_box">
+        <h3 style="color: white; text-align: center;"> Add Contact </h3>
+        <form action="/add_contact" method="post">
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="add_c_phone_number" class="form-label">Phone Number</label>
+              <input autocomplete="off" name="add_c_phone_number" type="text" class="form-control" id="add_c_phone_number" placeholder="xxx-xxx-xxx-xx">
+            </div>
+
+            <div class="col-10" style="margin-left: 10%; margin-top: 0.5cm; margin-bottom: 0.25cm;">
+              <select class="form-select" aria-label="Country" name="add_c_country">
+                  <option selected disabled>Country</option>
+                  {% for country in countries %}
+                  <option value="{{country}}">{{country}}</option>
+                  {% endfor %}
+              </select>
+            </div>
+
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="add_c_password" class="form-label">Your Password</label>
+              <input name="add_c_password"type="password" class="form-control" id="add_c_password">
+            </div>
+
+            <button class="btn btn-light" id="login_button" type="submit" name="action" style="margin-left: 25%;">Add</button>
+        </form>
+    </div>
+    <br>
+    <div class="center_box">
+        <h3 style="color: white; text-align: center;"> Remove Contact </h3>
+        <form action="/remove_contact" method="post">
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="remove_c_phone_number" class="form-label">Phone Number</label>
+              <input autocomplete="off" name="remove_c_phone_number" type="text" class="form-control" id="remove_c_phone_number" placeholder="xxx-xxx-xxx-xx">
+            </div>
+
+            <div class="col-10" style="margin-left: 10%; margin-top: 0.5cm; margin-bottom: 0.25cm;">
+              <select class="form-select" aria-label="Country" name="remove_c_country">
+                  <option selected disabled>Country</option>
+                  {% for country in countries %}
+                  <option value="{{country}}">{{country}}</option>
+                  {% endfor %}
+              </select>
+            </div>
+
+
+            <div class="col-10" style="margin-left: 10%;">
+              <label for="remove_c_password" class="form-label">Your Password</label>
+              <input name="remove_c_password"type="password" class="form-control" id="remove_c_password">
+            </div>
+
+            <button class="btn btn-light" id="login_button" type="submit" name="action" style="margin-left: 25%;">Remove</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+</script>
+{% endblock %}
