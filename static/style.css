@@ -1,0 +1,75 @@
+body {
+    background-color: #4A628A;
+    margin-top: 30%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+ul {
+    position: sticky;
+}
+
+#login_button {
+    margin-top: 10%;
+    width: 50%;
+    height: 15%;
+    font-size: medium;
+    border-radius: 15px;
+}
+
+.error{
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    width: 10cm;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.875);
+    text-align: center;
+}
+
+.container {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.center_box {
+    max-width: 50%;
+}
+
+.marg-l-10 {
+    margin-left: 10%;
+}
+
+.notif_box {
+    height: fit-content;
+    background-color: #2b3034;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.center_div {
+    margin-left: 25%;
+}
+
+.Chat {
+    margin-top: -10%;
+    color: black;
+    width: 100%;
+    height: fit-content;
+    background-color: #B5C0D0;
+    padding: 5%;
+    border-radius: 20px;
+}
+
+.send_message_box {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
